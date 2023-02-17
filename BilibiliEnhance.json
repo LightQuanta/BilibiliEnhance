@@ -1,0 +1,31 @@
+{
+	"request": [
+		{
+			"enable": true,
+			"name": "评论IP属地显示+隐藏评论显示并标记",
+			"ruleType": "redirect",
+			"matchType": "prefix",
+			"pattern": "https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js",
+			"exclude": "",
+			"group": "BilibiliEnhance",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance/comment.min.js"
+		},
+		{
+			"enable": true,
+			"name": "增加粉丝/关注页面可查看数量",
+			"ruleType": "redirect",
+			"matchType": "prefix",
+			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js",
+			"exclude": "",
+			"group": "BilibiliEnhance",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js"
+		}
+	],
+	"sendHeader": [],
+	"receiveHeader": [],
+	"receiveBody": []
+}
