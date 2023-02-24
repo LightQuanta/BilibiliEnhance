@@ -10,7 +10,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance/comment.min.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.0.1/comment.min.js"
 		},
 		{
 			"enable": true,
@@ -22,7 +22,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.0.1/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js"
 		},
 		{
 			"enable": true,
@@ -34,7 +34,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance/comment-pc-vue.next.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.0.1/comment-pc-vue.next.js"
 		}
 	],
 	"sendHeader": [],
