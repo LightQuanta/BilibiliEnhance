@@ -10,4 +10,4 @@
 
 # 使用教程
 1. 下载浏览器插件[Header Editor](http://he.firefoxcn.net/)
-2. 转到导出和导入界面，链接填写https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.0/BilibiliEnhance.json ，保存至任意分组并启用规则即可
+2. 转到导出和导入界面，链接填写https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.1/BilibiliEnhance.json ，保存至任意分组并启用规则即可
