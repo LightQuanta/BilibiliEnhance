@@ -10,19 +10,19 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.1/comment.min.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.2/comment.min.js"
 		},
 		{
 			"enable": true,
 			"name": "关注/粉丝查看界面关注时间显示+增加粉丝/关注页面可查看数量",
 			"ruleType": "redirect",
 			"matchType": "prefix",
-			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js",
+			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/4.space.168c00e79ea22217f5646a94eca3014137e35d14.js",
 			"exclude": "",
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.1/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.2/4.space.168c00e79ea22217f5646a94eca3014137e35d14.js"
 		},
 		{
 			"enable": true,
@@ -34,7 +34,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.1/comment-pc-vue.next.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.2/comment-pc-vue.next.js"
 		}
 	],
 	"sendHeader": [],
@@ -50,19 +50,31 @@
 			"group": "BilibiliEnhance",
 			"isFunction": true,
 			"encoding": "UTF-8",
-			"code": "//主楼invisible变量\nlet replyInvisible = val.match(/(return\\(0,\\w+\\.\\w+\\)\\(\\w\\)\\|\\|\\(0,\\w+\\.\\w+\\)\\()(\\w)(\\)\\?\\(0,\\w+\\.\\w+\\)\\(\"v-if\",!0\\):\\(\\(0,\\w\\.\\w+\\)\\(\\),\\(0,\\w+\\.\\w+\\)\\(\"div\",{key:0,class:\"reply)/)?.[2];\n//回复楼invisible变量\nlet subReplyInvisible = val.match(/(return\\(0,\\w+\\.\\w+\\)\\(\\w\\)\\|\\|\\(0,\\w+\\.\\w+\\)\\()(\\w)(\\)\\?\\(0,\\w+\\.\\w+\\)\\(\"v-if\",!0\\):\\(\\(0,\\w\\.\\w+\\)\\(\\),\\(0,\\w+\\.\\w+\\)\\(\"div\",{key:0,class:\\()/)?.[2];\n\n//隐藏评论恢复显示\nval = val\n    .replace(/(return\\(0,\\w+.\\w+\\)\\(\\w\\)\\|\\|\\(0,\\w+.\\w+\\)\\()(\\w)(\\)\\?\\(0,\\w+.\\w+\\)\\(\"v-if\",!0\\):\\(\\(0,\\w\\.\\w+\\)\\(\\),\\(0,\\w+\\.\\w+\\)\\(\"div\",{key:0,class:\"reply)/, \"$1false$3\")\n    .replace(/(return\\(0,\\w+.\\w+\\)\\(\\w\\)\\|\\|\\(0,\\w+.\\w+\\)\\()(\\w)(\\)\\?\\(0,\\w+.\\w+\\)\\(\"v-if\",!0\\):\\(\\(0,\\w\\.\\w+\\)\\(\\),\\(0,\\w+\\.\\w+\\)\\(\"div\",{key:0,class:\"\\()/, \"$1false$3\");\n\n//主楼IP属地样式reply-location\nlet classReplyLocation = val.match(/(\\w\\w)={key:0,class:\"reply-location\"}/)?.[1];\n//回复楼IP属地样式sub-reply-location\nlet classSubReplyLocation = val.match(/(\\w\\w)={key:0,class:\"sub-reply-location\"}/)?.[1];\n\n//主楼元素创建匹配正则\nlet repRegExp = new RegExp(`(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\?\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\),\\\\(0,)(\\\\w+\\\\.\\\\w+)(\\\\)\\\\(\"span\",)(${classReplyLocation})(,\\\\(0,)(\\\\w+)(\\\\.toDisplayString\\\\)\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\),1\\\\)\\\\):\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\"v-if\",!0\\\\),)`);\n//回复楼元素创建匹配正则\nlet subRepRegExp = new RegExp(`(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\?\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\),\\\\(0,)(\\\\w+\\\\.\\\\w+)(\\\\)\\\\(\"span\",)(${classSubReplyLocation})(,\\\\(0,)(\\\\w+)(\\\\.toDisplayString\\\\)\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\),1\\\\)\\\\):\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\"v-if\",!0\\\\),)`);\n\nlet createElement = val.match(repRegExp)?.[2];\nlet toDisplayStringVar = val.match(repRegExp)?.[6];\n\nval = val\n    .replace(repRegExp,\n        //主楼IP属地显示\n        '$1$2$3{class:\"reply-location\",style:{color:\"#0CC\"}}$5$6$7' +\n        //主楼隐藏评论标记\n        `(${replyInvisible}.value)?((0,${createElement})(\"span\",{style:{marginLeft:\"-10px\",marginRight:\"10px\",color:\"red\"}},(0,${toDisplayStringVar}.toDisplayString)(\"该评论被隐藏\"),1)):(0,${createElement})(\"span\",{style:{display:\"none\"}}),`)\n    .replace(subRepRegExp,\n        //回复楼IP属地显示\n        '$1$2$3{class:\"sub-reply-location\",style:{color:\"#0CC\"}}$5$6$7' +\n        //回复楼隐藏评论标记\n        `(${subReplyInvisible}.value)?((0,${createElement})(\"span\",{style:{marginLeft:\"-10px\",marginRight:\"10px\",color:\"red\"}},(0,${toDisplayStringVar}.toDisplayString)(\"该评论被隐藏\"),1)):(0,${createElement})(\"span\",{style:{display:\"none\"}}),`);\n\nval = val\n    // location唯一替换，IP属地还原\n    .replace(/(\\w=\\(0,\\w+\\.\\w+\\)\\(\\(function\\(\\){return)(!1)(}\\)\\))/, \"$1 e.value?.reply_control?.location||false$3\");\n\nreturn val;"
+			"code": "//主楼invisible变量\nlet replyInvisible = val.match(/(return\\(0,\\w+\\.\\w+\\)\\(\\w\\)\\|\\|\\(0,\\w+\\.\\w+\\)\\()(\\w)(\\)\\?\\(0,\\w+\\.\\w+\\)\\(\"v-if\",!0\\):\\(\\(0,\\w\\.\\w+\\)\\(\\),\\(0,\\w+\\.\\w+\\)\\(\"div\",{key:0,class:\"reply)/)?.[2];\n//回复楼invisible变量\nlet subReplyInvisible = val.match(/(return\\(0,\\w+\\.\\w+\\)\\(\\w\\)\\|\\|\\(0,\\w+\\.\\w+\\)\\()(\\w)(\\)\\?\\(0,\\w+\\.\\w+\\)\\(\"v-if\",!0\\):\\(\\(0,\\w\\.\\w+\\)\\(\\),\\(0,\\w+\\.\\w+\\)\\(\"div\",{key:0,class:\\()/)?.[2];\n\n//隐藏评论恢复显示\nval = val\n    .replace(`(${replyInvisible})?(0`, \"(false)?(0\")\n    .replace(`(${subReplyInvisible})?(0`, \"(false)?(0\");\n\n//主楼IP属地样式reply-location\nlet classReplyLocation = val.match(/(\\w\\w)={key:0,class:\"reply-location\"}/)?.[1];\n//回复楼IP属地样式sub-reply-location\nlet classSubReplyLocation = val.match(/(\\w\\w)={key:0,class:\"sub-reply-location\"}/)?.[1];\n\n//主楼元素创建匹配正则\nlet repRegExp = new RegExp(`(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\?\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\),\\\\(0,)(\\\\w+\\\\.\\\\w+)(\\\\)\\\\(\"span\",)(${classReplyLocation})(,\\\\(0,)(\\\\w+)(\\\\.toDisplayString\\\\)\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\),1\\\\)\\\\):\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\"v-if\",!0\\\\),)`);\n//回复楼元素创建匹配正则\nlet subRepRegExp = new RegExp(`(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\?\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\),\\\\(0,)(\\\\w+\\\\.\\\\w+)(\\\\)\\\\(\"span\",)(${classSubReplyLocation})(,\\\\(0,)(\\\\w+)(\\\\.toDisplayString\\\\)\\\\(\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\\\\w\\\\)\\\\),1\\\\)\\\\):\\\\(0,\\\\w+\\\\.\\\\w+\\\\)\\\\(\"v-if\",!0\\\\),)`);\n\nlet createElement = val.match(repRegExp)?.[2];\nlet toDisplayStringVar = val.match(repRegExp)?.[6];\n\nval = val\n    .replace(repRegExp,\n        //主楼IP属地显示\n        '$1$2$3{class:\"reply-location\",style:{color:\"#0CC\"}}$5$6$7' +\n        //主楼隐藏评论标记\n        `(${replyInvisible}.value)?((0,${createElement})(\"span\",{style:{marginLeft:\"-10px\",marginRight:\"10px\",color:\"red\"}},(0,${toDisplayStringVar}.toDisplayString)(\"该评论被隐藏\"),1)):(0,${createElement})(\"span\",{style:{display:\"none\"}}),`)\n    .replace(subRepRegExp,\n        //回复楼IP属地显示\n        '$1$2$3{class:\"sub-reply-location\",style:{color:\"#0CC\"}}$5$6$7' +\n        //回复楼隐藏评论标记\n        `(${subReplyInvisible}.value)?((0,${createElement})(\"span\",{style:{marginLeft:\"-10px\",marginRight:\"10px\",color:\"red\"}},(0,${toDisplayStringVar}.toDisplayString)(\"评论被隐藏\"),1)):(0,${createElement})(\"span\",{style:{display:\"none\"}}),`);\n\nval = val\n    // location唯一替换，IP属地还原\n    .replace(/(\\w=\\(0,\\w+\\.\\w+\\)\\(\\(function\\(\\){return)(!1)(}\\)\\))/, \"$1 e.value?.reply_control?.location||false$3\");\n\nreturn val;"
 		},
 		{
 			"enable": false,
 			"name": "（测试用）关注/粉丝查看界面关注时间显示+增加粉丝/关注页面可查看数量",
 			"ruleType": "modifyReceiveBody",
 			"matchType": "prefix",
-			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/4.space.4fd2781dc00b042fad38eb9de2b73088276ebe83.js",
+			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/4.space.168c00e79ea22217f5646a94eca3014137e35d14.js",
 			"exclude": "",
 			"group": "BilibiliEnhance",
 			"isFunction": true,
 			"encoding": "UTF-8",
-			"code": "return val\n    //关注时间显示\n    .replace('s(\"span\",{staticClass:\"fans-name\",style:{color:i.vip?i.vip.nickname_color:\"\"},on:{click:function(i){return t.addReport(2)}}},[t._v(t._s(i.uname))])',\n's(\"span\",{staticClass:\"fans-name\",style:{color:i.vip?i.vip.nickname_color:\"\"},on:{click:function(i){return t.addReport(2)}}},[t._v(t._s(i.uname))])' + \n',s(\"span\",{style:{color:\"#0CC\",fontSize:\"12px\",marginLeft:\"10px\"}},[t._v(t._s(i.mtime?\"关注时间：\"+new Date(i.mtime*1000).toLocaleString():\"\"))])')\n    //关注/粉丝数查看上限突破\n    .replaceAll(\"ps:20\",\"ps:50\")\n    .replace(\"/20\",\"/50\");"
+			"code": "return val\n    //关注时间显示\n    .replace(']),i.official_verify.desc', \n',s(\"span\",{style:{color:\"#0CC\",fontSize:\"12px\",marginLeft:\"10px\"}},[t._v(t._s(i.mtime?\"关注时间：\"+new Date(i.mtime*1000).toLocaleString():\"\"))])'\n+ ']),i.official_verify.desc'\n)\n    //关注/粉丝数查看上限突破\n    .replaceAll(\"ps:20\",\"ps:50\")\n    .replace(\"/20\",\"/50\");"
+		},
+		{
+			"enable": false,
+			"name": "（测试用）旧版评论区IP属地显示+隐藏评论显示并标记",
+			"ruleType": "modifyReceiveBody",
+			"matchType": "prefix",
+			"pattern": "https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js",
+			"exclude": "",
+			"group": "BilibiliEnhance",
+			"isFunction": true,
+			"encoding": "UTF-8",
+			"code": "return val\n  .replaceAll(\"// item?.reply_control?.location ? `<span class=\\\"reply-location\\\">IP属地：${item?.reply_control?.location || ''}</span>` : '',\",\n    \"item?.reply_control?.location ? `<span style=\\\"margin-left:5px; color: #0CC;\\\">${item?.reply_control?.location || ''}</span>` : '',item?.invisible ? '<span style=\\\"margin-left: 5px;color: red;\\\">评论被隐藏</span>' : '',\"\n  )\n  .replaceAll(\n    \"item.invisible\",\n    \"false\"\n  );"
 		}
 	]
 }
