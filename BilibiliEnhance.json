@@ -10,7 +10,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.3/comment.min.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.4/comment.min.js"
 		},
 		{
 			"enable": true,
@@ -22,7 +22,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.3/4.space.d0ff06ba6bc906c87b3fbbc7b034ec15c53a3249.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.4/4.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
 		},
 		{
 			"enable": true,
@@ -34,7 +34,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.3/comment-pc-vue.next.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.4/comment-pc-vue.next.js"
 		}
 	],
 	"sendHeader": [],
@@ -62,7 +62,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": true,
 			"encoding": "UTF-8",
-			"code": "return val\n    //关注时间显示\n    .replace(']),i.official_verify.desc', \n',s(\"span\",{style:{color:\"#0CC\",fontSize:\"12px\",marginLeft:\"10px\"}},[t._v(t._s(i.mtime?\"关注时间：\"+new Date(i.mtime*1000).toLocaleString():\"\"))])'\n+ ']),i.official_verify.desc'\n)\n    //关注/粉丝数查看上限突破\n    .replaceAll(\"ps:20\",\"ps:50\")\n    .replace(\"/20\",\"/50\");"
+			"code": "return val\n    //关注时间显示\n    .replace(']),i.official_verify.desc', \n',a(\"span\",{style:{color:\"#0CC\",fontSize:\"12px\",marginLeft:\"10px\"}},[t._v(t._s(i.mtime?\"关注时间：\"+new Date(i.mtime*1000).toLocaleString():\"\"))])'\n+ ']),i.official_verify.desc'\n)\n    //关注/粉丝数查看上限突破\n    .replaceAll(\"ps:20\",\"ps:50\")\n    .replace(\"/20\",\"/50\");"
 		},
 		{
 			"enable": false,
