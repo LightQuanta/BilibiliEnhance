@@ -10,7 +10,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/comment.min.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.6/comment.min.js"
 		},
 		{
 			"enable": true,
@@ -22,7 +22,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/4.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.6/4.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
 		},
 		{
 			"enable": true,
@@ -34,7 +34,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/comment-pc-vue.next.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.6/comment-pc-vue.next.js"
 		},
 		{
 			"enable": true,
@@ -46,7 +46,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/14.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.6/14.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
 		}
 	],
 	"sendHeader": [],
