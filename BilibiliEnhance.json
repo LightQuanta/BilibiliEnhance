@@ -10,7 +10,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.4/comment.min.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/comment.min.js"
 		},
 		{
 			"enable": true,
@@ -22,7 +22,7 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.4/4.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/4.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
 		},
 		{
 			"enable": true,
@@ -34,7 +34,19 @@
 			"group": "BilibiliEnhance",
 			"isFunction": false,
 			"action": "redirect",
-			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.4/comment-pc-vue.next.js"
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/comment-pc-vue.next.js"
+		},
+		{
+			"enable": true,
+			"name": "相簿发布时间显示",
+			"ruleType": "redirect",
+			"matchType": "prefix",
+			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/14.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js",
+			"exclude": "",
+			"group": "BilibiliEnhance",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://cdn.jsdelivr.net/gh/LightQuanta/BilibiliEnhance@1.1.5/14.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js"
 		}
 	],
 	"sendHeader": [],
@@ -75,6 +87,18 @@
 			"isFunction": true,
 			"encoding": "UTF-8",
 			"code": "return val\n  .replaceAll(\"// item?.reply_control?.location ? `<span class=\\\"reply-location\\\">IP属地：${item?.reply_control?.location || ''}</span>` : '',\",\n    \"item?.reply_control?.location ? `<span style=\\\"margin-left:5px; color: #0CC;\\\">${item?.reply_control?.location || ''}</span>` : '',item?.invisible ? '<span style=\\\"margin-left: 5px;color: red;\\\">评论被隐藏</span>' : '',\"\n  )\n  .replaceAll(\n    \"item.invisible\",\n    \"false\"\n  );"
+		},
+		{
+			"enable": false,
+			"name": "（测试用）相簿发布时间显示",
+			"ruleType": "modifyReceiveBody",
+			"matchType": "prefix",
+			"pattern": "https://s1.hdslb.com/bfs/static/jinkela/space/14.space.c53ded1dfa2eea69d3777a88db5fcd2692a0bb5c.js",
+			"exclude": "",
+			"group": "BilibiliEnhance",
+			"isFunction": true,
+			"encoding": "UTF-8",
+			"code": "return val.replace(\n')))])])])',\n')))])])]),e(\"span\",{staticStyle:{position:\"absolute\",fontSize:\"10px\",color:\"#bbc3cc\",marginTop:\"-4px\"}},[t._v(t._s(new Date(t.item.ctime*1000).toLocaleString()))])'\n);"
 		}
 	]
 }
