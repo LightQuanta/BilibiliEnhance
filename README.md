@@ -1,3 +1,6 @@
+**本项目功能已移植至[Bilibili-Evolved](https://github.com/the1812/Bilibili-Evolved)，后续不再进行更新**
+===
+
 # BilibiliEnhance
 
 使用[Header Editor](http://he.firefoxcn.net/)增强b站部分功能
